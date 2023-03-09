@@ -1,0 +1,183 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "Growth.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (United States) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_Growth DIALOGEX 30, 60, 271, 188
+STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION
+CAPTION "    GROWTH-23   3D inversion of gravity data"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "Run / OK",IDOK,143,151,41,20
+    PUSHBUTTON      "Cancel",IDCANCEL,222,151,29,19,NOT WS_TABSTOP
+    EDITTEXT        IDC_EDIT_e1,66,26,39,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_e3,65,43,41,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_e4,65,60,41,12,ES_AUTOHSCROLL
+    LTEXT           "Gravity data:",IDC_TEXT_t1,20,29,40,8
+    EDITTEXT        IDC_EDIT_e6,226,65,21,12,ES_CENTER | ES_AUTOHSCROLL
+    LTEXT           "Dens.model:",IDC_TEXT_t3,20,44,39,8
+    LTEXT           "Residuals:",IDC_TEXT_t4,20,61,35,8
+    GROUPBOX        "Inversion parameters",IDC_BOX_b4,124,9,135,131
+    CONTROL         "Adj",IDC_CHECK_c1,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,182,27,18,12
+    LTEXT           "Camacho-2023",IDC_STATIC,96,179,48,8,WS_DISABLED
+    LTEXT           "&Balance  mass-fitness >0 ",IDC_TEXT_t6,135,66,82,8
+    LTEXT           "Regional    g0 (uGal)",IDC_TEXT_t7,135,29,46,8
+    LTEXT           "gx,gy",IDC_TEXT_t8,211,28,18,8
+    CONTROL         "&Adj",IDC_CHECK_c2,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,233,27,18,12
+    LTEXT           "&Random search coeff. >=1 ",IDC_TEXT_t5,135,48,86,8
+    EDITTEXT        IDC_EDIT_e5,226,47,22,12,ES_CENTER | ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_e30,80,85,26,12,ES_AUTOHSCROLL | ES_READONLY | NOT WS_BORDER,WS_EX_STATICEDGE
+    EDITTEXT        IDC_EDIT_e31,80,148,34,12,ES_CENTER | ES_AUTOHSCROLL | ES_READONLY | NOT WS_BORDER,WS_EX_STATICEDGE
+    LTEXT           "Num.of data points:",IDC_TEXT_t12,17,85,62,8
+    ICON            IDI_ICON1,IDC_STATIC,193,150,20,20,SS_SUNKEN
+    LTEXT           "Num. of mod. cells:",IDC_TEXT_t13,17,148,61,8
+    GROUPBOX        "Input and output files",IDC_BOX_b1,13,9,102,70
+    EDITTEXT        IDC_EDIT_e13,225,101,22,12,ES_CENTER | ES_AUTOHSCROLL
+    LTEXT           "Coef. for upward (>=0)",IDC_TEXT_t14,135,120,74,8
+    GROUPBOX        "3D grid of cells",IDC_BOX_b3,14,106,102,33
+    LTEXT           "Cell side (m)",IDC_TEXT_t9,23,121,47,8
+    EDITTEXT        IDC_EDIT_e2,80,119,27,12,ES_CENTER | ES_AUTOHSCROLL
+    LTEXT           "End value: (final %)",IDC_TEXT_t2,135,83,61,8
+    EDITTEXT        IDC_EDIT_e7,226,83,22,12,ES_CENTER | ES_AUTOHSCROLL
+    LTEXT           "Coef, for flattening (>=0)",IDC_TEXT_t11,135,101,78,8
+    EDITTEXT        IDC_EDIT_e11,225,120,22,12,ES_CENTER | ES_AUTOHSCROLL
+    CONTROL         "Inner",IDC_CHECK_c3,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,27,166,30,12
+END
+
+IDD_Param DIALOGEX 30, 60, 181, 105
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Growth-23"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,31,81,26,14
+    PUSHBUTTON      "Cancel",IDCANCEL,97,82,50,14
+    LTEXT           "Blunder value for weighting",IDC_TEXT_t10,23,26,90,8
+    EDITTEXT        IDC_EDIT_e1,121,24,38,12,ES_CENTER | ES_AUTOHSCROLL
+    GROUPBOX        "Some inner values",IDC_BOX_b4,17,9,148,64
+    LTEXT           "Limit number of points for dg",IDC_TEXT_t30,23,42,94,8
+    EDITTEXT        IDC_EDIT_e2,121,40,38,12,ES_CENTER | ES_AUTOHSCROLL
+    ICON            IDI_ICON1,IDC_STATIC,67,76,20,20,SS_SUNKEN
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "Growth.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_Growth, DIALOG
+    BEGIN
+        RIGHTMARGIN, 270
+    END
+
+    IDD_Param, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 174
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 96
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// AFX_DIALOG_LAYOUT
+//
+
+IDD_Growth AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_Param AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+#endif    // English (United States) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Spanish (Spain, International Sort) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ESN)
+LANGUAGE LANG_SPANISH, SUBLANG_SPANISH_MODERN
+#pragma code_page(1252)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_ICON1               ICON                    "icon1.ico"
+
+#endif    // Spanish (Spain, International Sort) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
