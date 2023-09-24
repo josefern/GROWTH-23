@@ -1,0 +1,65 @@
+
+
+	       GROWTH-23 running process
+
+
+The whole inversion approach is performed by a single code and is controlled by a single dialog window. 
+Using this window, it is possible to input: (1) the file names, (2) the 3D grid of the cells and (3) the inversion parameters. 
+
+
+1. First step. Input data
+Input data, CBA or dg values, are collected in an ASCII file called “Gra.txt” (default name) which includes lines corresponding to the survey points. 
+Each line contains: easting and northing UTM coordinates (m), elevation (m) above sea level, gravity value (CBA value or gravity change, μGal), and an optional relative error value (μGal). 
+The end of the data can be indicated by an empty line.
+For a number of points larger than 30, the program assumes a CBA case and selects the corresponding conditions and default values.
+The name of the data file (and of the further output files) can be modified in the dialog window.
+Once the names of the files are accepted (by pressing “Run/Ok”), the code reads the data file and offers information on the number of data points.
+ 
+
+2. Second step. Grid of prismatic cells
+The modelling process for the anomalous density structures is based on imaging by aggregating of parallelepiped cells filled with anomalous density contrasts.
+The only value the user requires is the average size of the cells, which must be entered in the second step of the process. The window offers a suitable default value. 
+Once it is accepted or modified, the program returns the total number of cells that compose the 3D partition, which is arbitrarily limited to a maximum of 100,000 cells in the code.This step is identical for dg and CBA data.
+
+
+3. Third step. Values of the inversion parameters
+This is the crucial step in the application, and is clearly different for dg and CBA data.
+   
+    Regional offset/trend values go (μGal), gx(μGal/m) and gy(μGal/m) = offset and horizontal gradients.
+     CBA studies usually require a regional trend to be considered and adjusted for the gravity data.
+      The user can choose to adjust, or not, the values in the dialog window (by pressing or not the “Adj” button). The default option is adjusting the complete trend.
+     dg studies require optionally an offset value, go (μGal). The default option (“Adj” pressed) is to fit this offset simultaneously with the inversion process.
+    
+    Random search coefficient
+      This coefficient controls the degree of randomness.
+      Default value for CBA data is 80 to avoid a too long execution time. Default value for dg data is as little as 4.
+
+    Balance between mass and fitness
+      This is a critical parameter for the inversion approach. Low values produce good fitness but overly complex models. High values produce simple models but low data fit. 
+      Default values are λ=50 for CBA data and λ=30 for dg data.
+
+   End value
+     Desired final size in terms of the percentage (%) of filled cells with respect to the total number of available cells. Our experience suggests the following default values:
+       60% for CBA data, allowing for large and extended models.
+        3% for dg data, allowing for usually small and concentrated models.
+   
+   Heterogeneous models
+       In the case of CBA data, the revisiting and refilling process is free, and facilitates the generation of structurally layered models.
+       In the case of dg data inversion (and also CBA data when assuming a homogeneous background medium), the revisiting and refilling process requires the use of an additional constraint on the increase of the number of refilled cells from one density level to the next, to avoid a very concentrated model with only a high density contrast instead of a regular “onion structure”.
+
+   Blunder value for weighting the input gravity data
+      This is done using a cut-off value. Default values are 2.2 for dg data and 3.8 for CBA data.
+
+   Coefficient for flattening
+     The flattening coefficient is related to the option of using a stratified background medium with downward linear increasing density in case of CBA data inversion.
+     A value nf=0 in the code is taken as modelling with no stratified downward density increase.
+      For the complex and extended model for CBA data we have pre-set 50 as the default value. ernal available information.
+      For dg data we suggest a zero value (neutral depth setting) for this parameter.
+				
+4. Information on the running screen
+This software is developed in order to offer valuable on-screen graphical information to decide the suitable values for parameters, and to provide good graphical information about the model characteristics. After inputting the selected values for the inverse modelling parameters, the process runs automatically and returns information on the step-by-step cell population sequence.
+ 
+After the inversion run is completed, the code provides two ASCII files of the results:
+	“Mod.txt” contains the inverse modelling parameters and the resulting model described as a list of filled cells. For each cell the file contains: coordinates (X UTM, Y UTM, elevation above sea level of its centre, sides sx, sy, sz of the prismatic cells, density contrast (kg/m3) and relative sensitivity value.
+	“Fil.txt” contains a list of observed, modelled and residual values. A line for each survey point contains: coordinates (X and Y), observed value, offset or regional value, local value (observed minus offset), modelled value, residual value, test for outliers.
+

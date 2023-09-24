@@ -28,3 +28,5 @@ This package includes:
 
 
    (d) Additional files (*.vfproj, *.h, *.rc, *.ico, etc) for compilation.
+
+   (e) A brief UserManual-GROWTH23
